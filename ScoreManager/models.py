@@ -1,6 +1,20 @@
 from django.db import models
 from polymorphic.models import PolymorphicModel
 
+"""
+    В этом файле написаны классы сущности системы, каждый класс это наследник класса django.db.models.Model
+    Фреймворк организует базу данных исходя из этих классов 
+    
+    Типы данных: 
+    CharField - string с максимальной длинной max_length
+    IntegerField - int 
+    ForeignKey - внешний ключ (int) к другой сущности, см. теории базы данных 
+    DateField - дата
+    TimeField - время 
+    FloatField - float 
+    
+"""
+
 
 class Team(models.Model):
     title = models.CharField(max_length=50)
@@ -22,6 +36,9 @@ class Person(models.Model):
 
 # class Event(models.Model):
 class Event(PolymorphicModel):
+    """
+    данный класс - наследник класса polymorphic.models.PolymorphicModel, которые упрощает работу с полиморфными классами
+    """
     title = models.CharField(max_length=50)
     max_point = models.IntegerField(null=True)
     type = models.IntegerField(null=True)

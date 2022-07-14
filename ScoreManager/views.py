@@ -15,6 +15,10 @@ from ScoreManager.models import Event, Person, ScoreLog
 import csv
 from io import StringIO
 
+"""
+Тут написаны методы и классы которые отвечает за обработку и отправления нужных данных при определенных запросах 
+"""
+
 
 class PersonSerializer(
     serializers.ModelSerializer):
