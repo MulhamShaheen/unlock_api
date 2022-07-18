@@ -175,7 +175,7 @@ class EventScoreController(APIView):
         return Response({'error': 'rating should be between 0 and 10'})
 
 
-class TokenTester(APIView):# можешь не смотреть на это
+class TokenTester(APIView): # можешь не смотреть на это
     parser_classes = [JSONParser]
 
     authentication_classes = [TokenAuthentication]
